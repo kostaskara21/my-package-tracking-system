@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be4ef177-a0df-46fa-ba44-32abefcf05da" name="Changes" comment="" />
+    <list default="true" id="be4ef177-a0df-46fa-ba44-32abefcf05da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/EventPayloadHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/process/EventProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/AuthenticationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/PackageTrackingSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/configuration/ConsumerAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/integration/kafka/ConsumerAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/configuration/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/configuration/kafka/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/configuration/jackson/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/configuration/jackson/JacksonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/model/Professor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/EventHandlerRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/EventHandlerRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/strategies/ProfessorParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/strategies/ProfessorParsingStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/strategies/StudentParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/parsing/strategies/StudentParsingStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/service/EventPayloadHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/myauthapi/service/EventProcessor.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +33,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -35,7 +54,10 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.AuthenticationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PackageTrackingSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Make-TestEvent-Payload-XML-and-Make-Generic&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/user/my-kafka-example&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -55,9 +77,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="AuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="my-auth-api" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kara.myauthapi.AuthenticationServiceApplication" />
+    <configuration name="PackageTrackingSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="my-kafka-example" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kara.myauthapi.PackageTrackingSystemApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,7 +107,13 @@
       <workItem from="1771773271778" duration="9523000" />
       <workItem from="1771785477331" duration="2060000" />
       <workItem from="1771796818623" duration="7644000" />
-      <workItem from="1771841214997" duration="4418000" />
+      <workItem from="1771841214997" duration="7655000" />
+      <workItem from="1771879586415" duration="6080000" />
+      <workItem from="1772312860061" duration="15825000" />
+      <workItem from="1772490140032" duration="21000" />
+      <workItem from="1773184611244" duration="623000" />
+      <workItem from="1773253099175" duration="25000" />
+      <workItem from="1773523196880" duration="8622000" />
     </task>
     <servers />
   </component>

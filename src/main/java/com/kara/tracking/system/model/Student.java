@@ -1,7 +1,4 @@
-package com.kara.myauthapi.model;
-
-import com.kara.myauthapi.event.TestEvent;
-import com.kara.myauthapi.service.EventPayloadHandler;
+package com.kara.tracking.system.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

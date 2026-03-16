@@ -1,9 +1,9 @@
-package com.kara.myauthapi.configuration;
+package com.kara.tracking.system.configuration.kafka;
 
 
 
 import org.springframework.kafka.support.serializer.JsonDeserializer;
-import com.kara.myauthapi.event.TestEvent;
+import com.kara.tracking.system.event.TestEvent;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.beans.factory.annotation.Value;

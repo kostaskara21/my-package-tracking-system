@@ -1,9 +1,8 @@
-package com.kara.myauthapi.configuration;
+package com.kara.tracking.system.integration.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kara.myauthapi.event.TestEvent;
-import com.kara.myauthapi.service.EventProcessor;
+import com.kara.tracking.system.event.TestEvent;
+import com.kara.tracking.system.process.EventProcessor;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +26,5 @@ public class ConsumerAuth {
        log.info("Received message: " + message);
 
        eventProcessor.process(message);
-
     }
 }

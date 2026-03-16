@@ -1,4 +1,4 @@
-package com.kara.myauthapi.event;
+package com.kara.tracking.system.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
