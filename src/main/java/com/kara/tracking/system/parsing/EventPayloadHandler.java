@@ -1,11 +1,12 @@
 package com.kara.tracking.system.parsing;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.kara.tracking.system.model.enums.EventTrackingType;
 
 
- public interface EventPayloadHandler<T>{
+public interface EventPayloadHandler<T>{
 
-   String getTypeOfEvent();
+   EventTrackingType getTypeOfEvent();
 
    void handle(T payload) throws JsonProcessingException;
 

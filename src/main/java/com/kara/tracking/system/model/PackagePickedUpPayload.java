@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student  {
+public class PackagePickedUpPayload {
     private String id;
     private String name;
     private String email;

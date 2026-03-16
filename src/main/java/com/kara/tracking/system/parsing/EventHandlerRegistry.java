@@ -1,5 +1,6 @@
 package com.kara.tracking.system.parsing;
 
+import com.kara.tracking.system.model.enums.EventTrackingType;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -10,7 +11,7 @@ import java.util.Map;
 @Service
 public class EventHandlerRegistry {
 
-    private final Map<String, EventPayloadHandler<?>> registry = new HashMap<>();
+    private final Map<EventTrackingType, EventPayloadHandler<?>> registry = new HashMap<>();
 
 
     public EventHandlerRegistry(List<EventPayloadHandler<?>> handlers) {
@@ -20,7 +21,7 @@ public class EventHandlerRegistry {
     }
 
     public EventPayloadHandler<?> getHandler(String type) {
-        EventPayloadHandler<?> handler = registry.get(type);
+        EventPayloadHandler<?> handler = registry.get(EventTrackingType.valueOf(type));
         if (handler == null) throw new RuntimeException("No handler for type: " + type);
         return handler;
     }

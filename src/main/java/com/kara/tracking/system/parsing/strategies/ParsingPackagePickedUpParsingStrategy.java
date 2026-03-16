@@ -1,7 +1,8 @@
 package com.kara.tracking.system.parsing.strategies;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.kara.tracking.system.model.Student;
+import com.kara.tracking.system.model.PackagePickedUpPayload;
+import com.kara.tracking.system.model.enums.EventTrackingType;
 import com.kara.tracking.system.parsing.EventPayloadHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,22 +11,22 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class StudentParsingStrategy implements EventPayloadHandler<Student> {
+public class ParsingPackagePickedUpParsingStrategy implements EventPayloadHandler<PackagePickedUpPayload> {
 
 
     @Override
-    public String getTypeOfEvent() {
-        return "STUDENT";
+    public EventTrackingType getTypeOfEvent() {
+        return EventTrackingType.PACKAGE_PICKED_UP;
     }
 
     @Override
-    public void handle(Student payload) throws JsonProcessingException {
-
+    public void handle(PackagePickedUpPayload payload) throws JsonProcessingException {
+        //og.info();
     }
 
     @Override
-    public Class<Student> getPayloadType() {
-        return Student.class;
+    public Class<PackagePickedUpPayload> getPayloadType() {
+        return PackagePickedUpPayload.class;
     }
 
 /*    @Override

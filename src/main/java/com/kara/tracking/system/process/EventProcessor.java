@@ -3,6 +3,7 @@ package com.kara.tracking.system.process;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.kara.tracking.system.event.TestEvent;
+import com.kara.tracking.system.model.enums.EventTrackingType;
 import com.kara.tracking.system.parsing.EventHandlerRegistry;
 import com.kara.tracking.system.parsing.EventPayloadHandler;
 import lombok.RequiredArgsConstructor;
@@ -42,7 +43,7 @@ public class EventProcessor {
     }
 
     private <T> EventPayloadHandler<T> getEventHandler(TestEvent event) {
-        return  (EventPayloadHandler<T>) registry.getHandler(event.getType());
+        return  (EventPayloadHandler<T>) registry.getHandler(String.valueOf(EventTrackingType.valueOf(event.getType())));
 
     }
 }
