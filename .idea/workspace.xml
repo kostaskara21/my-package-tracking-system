@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be4ef177-a0df-46fa-ba44-32abefcf05da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/integration/rest/WebCleint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/enums/EventTrackingType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/configuration/webclient/WebClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/exceptions/AuthenticationFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/exceptions/ClientErrorException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/ContactInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/service/AuthUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/service/AuthUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/Professor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/PackageCreatedPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/PackagePickedUpPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/EventHandlerRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/EventHandlerRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/EventPayloadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/EventPayloadHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/ProfessorParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/ParsingStrPackageCreatedParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/StudentParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/ParsingPackagePickedUpParsingStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/configuration/kafka/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/configuration/kafka/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/event/TestEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/event/TrackingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/integration/kafka/ConsumerAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/integration/kafka/consumer/TrackingConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/integration/rest/WebCleint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/PackageCreatedPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/PackageCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/PackagePickedUpPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/model/PackagePickedUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/ParsingPackagePickedUpParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/PackagePickedUpParsingStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/ParsingStrPackageCreatedParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/parsing/strategies/PackageCreatedParsingStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/process/EventProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kara/tracking/system/process/EventProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -25,27 +33,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kostaskara21"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kostaskara21&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kostaskara21/my-package-tracking-system.git",
-    "accountId": "6d4259c4-f88f-4e1f-9287-78633a909662"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kostaskara21/my-package-tracking-system.git&quot;,
+    &quot;accountId&quot;: &quot;6d4259c4-f88f-4e1f-9287-78633a909662&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -54,30 +62,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.AuthenticationServiceApplication.executor": "Run",
-    "Spring Boot.PackageTrackingSystemApplication.executor": "Debug",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/my-kafka-example",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthenticationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PackageTrackingSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/my-kafka-example&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\my-auth-api" />
@@ -135,8 +143,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/kara/tracking/system/process/EventProcessor.java</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/kara/tracking/system/process/EventProcessor.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,7 +3,7 @@ package com.kara.tracking.system.configuration.kafka;
 
 
 import org.springframework.kafka.support.serializer.JsonDeserializer;
-import com.kara.tracking.system.event.TestEvent;
+import com.kara.tracking.system.event.TrackingEvent;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +30,7 @@ public class KafkaConsumerConfig {
 
 
     @Bean
-    public ConsumerFactory<String, TestEvent> consumerFactory() {
+    public ConsumerFactory<String, TrackingEvent> consumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
@@ -38,14 +38,14 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         props.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
-        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, TestEvent.class.getName());
+        props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, TrackingEvent.class.getName());
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, TestEvent> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, TestEvent> factory =
+    public ConcurrentKafkaListenerContainerFactory<String, TrackingEvent> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, TrackingEvent> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;

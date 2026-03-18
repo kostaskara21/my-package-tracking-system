@@ -1,7 +1,7 @@
-package com.kara.tracking.system.integration.kafka;
+package com.kara.tracking.system.integration.kafka.consumer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.kara.tracking.system.event.TestEvent;
+import com.kara.tracking.system.event.TrackingEvent;
 import com.kara.tracking.system.process.EventProcessor;
 
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @RequiredArgsConstructor
 @Service
-public class ConsumerAuth {
+public class TrackingConsumer {
 
 
     private final EventProcessor eventProcessor;
@@ -22,7 +22,7 @@ public class ConsumerAuth {
             groupId = "${spring.kafka.consumer.group-id}",
             containerFactory = "kafkaListenerContainerFactory"
     )
-    public void consume(TestEvent message) throws JsonProcessingException {
+    public void consume(TrackingEvent message) throws JsonProcessingException {
        log.info("Received message: " + message);
 
        eventProcessor.process(message);

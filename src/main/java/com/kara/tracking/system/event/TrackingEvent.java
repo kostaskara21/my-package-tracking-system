@@ -10,8 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TestEvent {
+public class TrackingEvent {
     private String payload;
     private String type;
     private String id;
+    private String authId;
+
 }

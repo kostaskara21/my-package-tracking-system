@@ -1,7 +1,7 @@
 package com.kara.tracking.system.parsing.strategies;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.kara.tracking.system.model.PackageCreatedPayload;
+import com.kara.tracking.system.model.PackageCreated;
 import com.kara.tracking.system.model.enums.EventTrackingType;
 import com.kara.tracking.system.parsing.EventPayloadHandler;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class ParsingStrPackageCreatedParsingStrategy implements EventPayloadHandler<PackageCreatedPayload> {
+public class PackageCreatedParsingStrategy implements EventPayloadHandler<PackageCreated> {
 
 
 
@@ -21,13 +21,13 @@ public class ParsingStrPackageCreatedParsingStrategy implements EventPayloadHand
     }
 
     @Override
-    public void handle(PackageCreatedPayload payload) throws JsonProcessingException {
+    public void handle(PackageCreated payload) throws JsonProcessingException {
         log.info("we got {}",payload);
     }
 
     @Override
-    public Class<PackageCreatedPayload> getPayloadType() {
-        return PackageCreatedPayload.class;
+    public Class<PackageCreated> getPayloadType() {
+        return PackageCreated.class;
     }
 
 }
