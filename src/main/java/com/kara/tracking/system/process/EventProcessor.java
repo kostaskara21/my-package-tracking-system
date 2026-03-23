@@ -7,8 +7,10 @@ import com.kara.tracking.system.parsing.EventHandlerRegistry;
 import com.kara.tracking.system.parsing.EventPayloadHandler;
 import com.kara.tracking.system.service.AuthUserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class EventProcessor {
@@ -20,9 +22,11 @@ public class EventProcessor {
     public <T> void process(TrackingEvent event) throws JsonProcessingException {
 
 
-        String uid= event.getAuthId();
+        log.info("Consumed Tracking event {}",event,"` Checking Authentication");
 
-        authUserService.authenticateUser(uid).block();
+        //String uid= event.getAuthId();
+
+        //authUserService.authenticateUser(uid).block();
 
         EventPayloadHandler<T> handler = getEventHandler(event);
 

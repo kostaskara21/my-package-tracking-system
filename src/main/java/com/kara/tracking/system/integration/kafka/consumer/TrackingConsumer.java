@@ -24,7 +24,6 @@ public class TrackingConsumer {
     )
     public void consume(TrackingEvent message) throws JsonProcessingException {
        log.info("Received message: " + message);
-
        eventProcessor.process(message);
     }
 }

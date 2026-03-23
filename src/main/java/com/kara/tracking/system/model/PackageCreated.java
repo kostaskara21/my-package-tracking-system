@@ -15,11 +15,12 @@ import javax.xml.stream.Location;
 public class PackageCreated {
     private String packageId;
     private String orderId;
-    private ContactInfo sender;
-    private ContactInfo recipient;
-    private Location origin;
-    private Location destination;
+    private String sender;
+    private String recipient;
+    private String origin;
+    private String destination;
     private double weightKg;
     private String priority;
+    private String courierId;
 
 }

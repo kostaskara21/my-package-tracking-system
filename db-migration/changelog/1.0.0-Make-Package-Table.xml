@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+
+    <changeSet id="1" author="kara">
+        <createTable tableName="package">
+            <column name="package_id" type="varchar(50)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_id" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sender" type="jsonb"/>
+            <column name="recipient" type="jsonb"/>
+            <column name="origin_lat" type="numeric"/>
+            <column name="origin_long" type="numeric"/>
+            <column name="destination_lat" type="numeric"/>
+            <column name="destination_long" type="numeric"/>
+            <column name="weight_kg" type="numeric"/>
+            <column name="priority" type="varchar(20)"/>
+            <column name="courier_id" type="varchar(50)"/>
+            <column name="pickup_time" type="timestamp"/>
+            <column name="pickup_lat" type="numeric"/>
+            <column name="pickup_long" type="numeric"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="kara">
+        <modifyDataType tableName="package" columnName="sender" newDataType="varchar(200)"/>
+        <modifyDataType tableName="package" columnName="recipient" newDataType="varchar(200)"/>
+
+        <dropColumn tableName="package" columnName="origin_lat"/>
+        <dropColumn tableName="package" columnName="origin_long"/>
+        <dropColumn tableName="package" columnName="destination_lat"/>
+        <dropColumn tableName="package" columnName="destination_long"/>
+        <dropColumn tableName="package" columnName="pickup_time"/>
+        <dropColumn tableName="package" columnName="pickup_lat"/>
+        <dropColumn tableName="package" columnName="pickup_long"/>
+    </changeSet>
+
+    <changeSet id="3" author="kara">
+        <addColumn tableName="package">
+            <column name="origin" type="varchar(50)"></column>
+            <column name="destination" type="varchar(50)"></column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="4" author="kara">
+        <dropColumn tableName="package" columnName="pickup_time"/>
+        <dropColumn tableName="package" columnName="pickup_lat"/>
+        <dropColumn tableName="package" columnName="pickup_long"/>
+    </changeSet>
+</databaseChangeLog>

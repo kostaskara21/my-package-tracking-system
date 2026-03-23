@@ -1,9 +1,12 @@
 package com.kara.tracking.system.parsing.strategies;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.kara.tracking.system.mapper.PackageMapper;
 import com.kara.tracking.system.model.PackageCreated;
+import com.kara.tracking.system.model.entities.PackageEntity;
 import com.kara.tracking.system.model.enums.EventTrackingType;
 import com.kara.tracking.system.parsing.EventPayloadHandler;
+import com.kara.tracking.system.service.PackageManagementService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -13,7 +16,8 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class PackageCreatedParsingStrategy implements EventPayloadHandler<PackageCreated> {
 
-
+    private final PackageManagementService packageManagementService;
+    private  final PackageMapper packageMapper;
 
     @Override
     public EventTrackingType getTypeOfEvent() {
@@ -22,7 +26,12 @@ public class PackageCreatedParsingStrategy implements EventPayloadHandler<Packag
 
     @Override
     public void handle(PackageCreated payload) throws JsonProcessingException {
-        log.info("we got {}",payload);
+        log.info("Received event of type  {}",getTypeOfEvent());
+
+        packageManagementService.createOrUpdatePackag(payload, aPackage -> {
+            packageMapper.updateFromCreated(payload,aPackage);
+
+        });
     }
 
     @Override
