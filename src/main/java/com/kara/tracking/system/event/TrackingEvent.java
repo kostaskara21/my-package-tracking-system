@@ -15,5 +15,4 @@ public class TrackingEvent {
     private String type;
     private String id;
     private String authId;
-
 }

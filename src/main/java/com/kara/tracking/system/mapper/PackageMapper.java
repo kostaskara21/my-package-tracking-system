@@ -21,5 +21,10 @@ public interface PackageMapper {
     void updateFromCreated(PackageCreated source, @MappingTarget PackageEntity target);
 
     // for PICKED UP
+    @Mappings({
+            @Mapping(source = "destination", target = "destination"),
+            @Mapping(source = "priority", target = "priority"),
+            @Mapping(source = "location", target = "location")
+    })
     void updateFromPickedUp(PackagePickedUp source, @MappingTarget PackageEntity target);
 }

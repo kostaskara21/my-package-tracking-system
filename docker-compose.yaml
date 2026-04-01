@@ -29,7 +29,6 @@ services:
       - spring-network
     volumes:
       - ./db-migration/changelog:/liquibase/changelog
-      #- ./drivers/postgresql.jar:/liquibase/lib/postgresql.jar   # <-- ADD THIS
     command:
       [
         "--search-path=/liquibase/changelog",

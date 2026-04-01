@@ -7,6 +7,6 @@ import java.util.function.Consumer;
 
 public interface PackageManagementService {
 
-    void createOrUpdatePackag(PackageCreated packageCreated, Consumer<PackageEntity> consumer);
+    void createOrUpdatePackag(String packageId,String orderId, Consumer<PackageEntity> consumer);
 
 }

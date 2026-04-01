@@ -11,6 +11,7 @@ import java.time.Instant;
 public class PackagePickedUp {
     private String packageId;
     private String courierId;
+    private String orderId;
     private String location;
     private String destination;
     private String priority;

@@ -41,6 +41,9 @@ public class PackageEntity {
     @Column(name = "courier_id")
     private String courierId;
 
+    @Column(name = "location")
+    private String location ;
+
 
 
 }

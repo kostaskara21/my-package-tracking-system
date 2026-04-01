@@ -17,22 +17,23 @@ public class PackageManagmentServiceImpl  implements PackageManagementService{
     private  final PackageRepository packageRepository;
 
     @Override
-    public void createOrUpdatePackag(PackageCreated packageCreated,Consumer<PackageEntity> packageCreatedConsumer) {
+    public void createOrUpdatePackag(String packageId,String orderId,Consumer<PackageEntity> packageCreatedConsumer) {
 
-        log.info("Checking if package exists or Creating new Entry in DB with packageId: {}",packageCreated.getPackageId());
-        if(packageCreated.getPackageId()!=null) {
+        log.info("Checking if package exists or Creating new Entry in DB with packageId: {}",packageId);
+
             PackageEntity newPackage = packageRepository
-                    .findById(packageCreated.getPackageId())
+                    .findById(packageId)
                     .orElseGet(() -> {
                         PackageEntity newPkg = new PackageEntity();
-                        newPkg.setPackageId(packageCreated.getPackageId());
+                        newPkg.setPackageId(packageId);
+                        newPkg.setOrderId(orderId);
                         return newPkg;
                     });
 
             packageCreatedConsumer.accept(newPackage);
 
             packageRepository.save(newPackage);
-        }
+
 
     }
 }
