@@ -25,7 +25,7 @@ public class PackagePickedUpParsingStrategy implements EventPayloadHandler<Packa
 
     @Override
     public void handle(PackagePickedUp payload) throws JsonProcessingException {
-        packageManagementService.createOrUpdatePackag(payload.getPackageId(), payload.getOrderId(), aPackage -> {
+        packageManagementService.createOrUpdatePackag(payload.getPackageId(), payload.getOrderId(), getTypeOfEvent(),aPackage -> {
             packageMapper.updateFromPickedUp(payload,aPackage);
 
         });

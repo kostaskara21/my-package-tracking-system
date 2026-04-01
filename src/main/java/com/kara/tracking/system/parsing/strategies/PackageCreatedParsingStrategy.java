@@ -28,7 +28,7 @@ public class PackageCreatedParsingStrategy implements EventPayloadHandler<Packag
     public void handle(PackageCreated payload) throws JsonProcessingException {
         log.info("Received event of type  {}",getTypeOfEvent());
 
-        packageManagementService.createOrUpdatePackag(payload.getPackageId(), payload.getOrderId(), aPackage -> {
+        packageManagementService.createOrUpdatePackag(payload.getPackageId(), payload.getOrderId(),getTypeOfEvent(),aPackage -> {
             packageMapper.updateFromCreated(payload,aPackage);
 
         });
