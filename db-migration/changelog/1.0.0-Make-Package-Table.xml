@@ -24,4 +24,10 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="2-add-created-at-column" author="kara">
+        <addColumn tableName="package">
+            <column name="timestamp" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

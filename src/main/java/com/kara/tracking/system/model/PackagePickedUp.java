@@ -15,5 +15,7 @@ public class PackagePickedUp {
     private String location;
     private String destination;
     private String priority;
+    private Instant timestamp;
+
 
 }

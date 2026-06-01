@@ -25,7 +25,6 @@ public class EventProcessor {
         log.info("Consumed Tracking event {}",event,"` Checking Authentication");
 
         //String uid= event.getAuthId();
-
         //authUserService.authenticateUser(uid).block();
 
         EventPayloadHandler<T> handler = getEventHandler(event);

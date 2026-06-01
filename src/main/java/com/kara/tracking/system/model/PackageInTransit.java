@@ -5,25 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.xml.stream.Location;
 import java.time.Instant;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class PackageCreated {
+public class PackageInTransit {
     private String packageId;
-    private String orderId;
     private String courierId;
-    private String sender;
-    private String recipient;
-    private String origin;
-    private String destination;
-    private double weightKg;
-    private String priority;
+    private String orderId;
+    private String location;
+    //TODO UPDATE THE OTHER EVENTS WITH THE TIMESTAMP
     private Instant timestamp;
-
-
 }

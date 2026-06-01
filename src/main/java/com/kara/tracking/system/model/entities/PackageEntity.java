@@ -44,6 +44,9 @@ public class PackageEntity {
     @Column(name = "location")
     private String location ;
 
+    @Column(name = "timestamp")
+    private Instant timestamp;
+
 
 
 }
