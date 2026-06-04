@@ -1,5 +1,9 @@
 package com.kara.tracking.system.model;
 
+import com.kara.tracking.system.model.enums.EventTrackingType;
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +20,9 @@ public class PackageInTransit {
     private String courierId;
     private String orderId;
     private String location;
-    //TODO UPDATE THE OTHER EVENTS WITH THE TIMESTAMP
     private Instant timestamp;
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+
+    private EventTrackingType status;
 }

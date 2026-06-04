@@ -30,4 +30,12 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="3-add-status-at-column" author="kara">
+        <addColumn tableName="package">
+            <column name="status" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+
+
+
 </databaseChangeLog>

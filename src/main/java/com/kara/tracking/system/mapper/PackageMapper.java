@@ -1,6 +1,7 @@
 package com.kara.tracking.system.mapper;
 
 import com.kara.tracking.system.model.PackageCreated;
+import com.kara.tracking.system.model.PackageDelivered;
 import com.kara.tracking.system.model.PackageInTransit;
 import com.kara.tracking.system.model.PackagePickedUp;
 import com.kara.tracking.system.model.entities.PackageEntity;
@@ -17,7 +18,8 @@ public interface PackageMapper {
             @Mapping(source = "origin", target = "origin"),
             @Mapping(source = "destination", target = "destination"),
             @Mapping(source = "weightKg", target = "weightKg"),
-            @Mapping(source = "priority", target = "priority")
+            @Mapping(source = "priority", target = "priority"),
+            @Mapping(source = "timestamp", target = "timestamp")
     })
     void updateFromCreated(PackageCreated source, @MappingTarget PackageEntity target);
 
@@ -25,7 +27,10 @@ public interface PackageMapper {
     @Mappings({
             @Mapping(source = "destination", target = "destination"),
             @Mapping(source = "priority", target = "priority"),
-            @Mapping(source = "location", target = "location")
+            @Mapping(source = "location", target = "location"),
+            @Mapping(source = "timestamp", target = "timestamp"),
+            @Mapping(source = "status", target = "status"),
+
     })
     void updateFromPickedUp(PackagePickedUp source, @MappingTarget PackageEntity target);
 
@@ -34,6 +39,17 @@ public interface PackageMapper {
     @Mappings({
             @Mapping(source = "location", target = "location"),
             @Mapping(source = "timestamp", target = "timestamp"),
+            @Mapping(source = "status", target = "status"),
+
     })
     void updateFromPackageInTransit(PackageInTransit source, @MappingTarget PackageEntity target);
+
+
+    // for  Delivered
+    @Mappings({
+            @Mapping(source = "location", target = "location"),
+            @Mapping(source = "timestamp", target = "timestamp"),
+            @Mapping(source = "status", target = "status"),
+    })
+    void updateFromPackageDelivered(PackageDelivered source, @MappingTarget PackageEntity target);
 }

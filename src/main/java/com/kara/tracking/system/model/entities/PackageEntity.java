@@ -1,5 +1,6 @@
 package com.kara.tracking.system.model.entities;
 
+import com.kara.tracking.system.model.enums.EventTrackingType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -46,6 +47,10 @@ public class PackageEntity {
 
     @Column(name = "timestamp")
     private Instant timestamp;
+
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private EventTrackingType status;
 
 
 
