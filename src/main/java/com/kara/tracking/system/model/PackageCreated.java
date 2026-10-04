@@ -33,5 +33,7 @@ public class PackageCreated {
 
     private EventTrackingType status;
 
+    private String recipient_email;
+
 
 }

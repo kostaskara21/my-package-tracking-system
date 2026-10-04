@@ -36,6 +36,12 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="4-add-recipient_email-at-column" author="kara">
+        <addColumn tableName="package">
+            <column name="recipient_email" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+
 
 
 </databaseChangeLog>

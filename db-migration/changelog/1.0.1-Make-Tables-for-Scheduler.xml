@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="1.0.1-1.0.0.4-1" author="kara" dbms="postgresql">
+
+        <createTable tableName="scheduled_tasks">
+            <column name="task_name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_instance" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_data" type="bytea"/>
+            <column name="execution_time" type="timestamp with time zone">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picked" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picked_by" type="text"/>
+            <column name="last_success" type="timestamp with time zone"/>
+            <column name="last_failure" type="timestamp with time zone"/>
+            <column name="consecutive_failures" type="int"/>
+            <column name="last_heartbeat" type="timestamp with time zone"/>
+            <column name="version" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="priority" type="smallint"/>
+        </createTable>
+
+        <!-- Add primary key -->
+        <addPrimaryKey tableName="scheduled_tasks" columnNames="task_name, task_instance"
+                       constraintName="pk_scheduled_tasks"/>
+
+        <!-- Add indexes -->
+        <createIndex indexName="execution_time_idx" tableName="scheduled_tasks">
+            <column name="execution_time"/>
+        </createIndex>
+
+        <createIndex indexName="last_heartbeat_idx" tableName="scheduled_tasks">
+            <column name="last_heartbeat"/>
+        </createIndex>
+
+        <createIndex indexName="priority_execution_time_idx" tableName="scheduled_tasks">
+            <column name="priority" descending="true"/>
+            <column name="execution_time"/>
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>

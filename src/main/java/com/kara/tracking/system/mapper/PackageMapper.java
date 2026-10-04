@@ -19,7 +19,8 @@ public interface PackageMapper {
             @Mapping(source = "destination", target = "destination"),
             @Mapping(source = "weightKg", target = "weightKg"),
             @Mapping(source = "priority", target = "priority"),
-            @Mapping(source = "timestamp", target = "timestamp")
+            @Mapping(source = "timestamp", target = "timestamp"),
+            @Mapping(source = "recipient_email", target = "recipient_email")
     })
     void updateFromCreated(PackageCreated source, @MappingTarget PackageEntity target);
 
@@ -30,6 +31,8 @@ public interface PackageMapper {
             @Mapping(source = "location", target = "location"),
             @Mapping(source = "timestamp", target = "timestamp"),
             @Mapping(source = "status", target = "status"),
+            @Mapping(source = "recipient_email", target = "recipient_email")
+
 
     })
     void updateFromPickedUp(PackagePickedUp source, @MappingTarget PackageEntity target);
@@ -40,6 +43,8 @@ public interface PackageMapper {
             @Mapping(source = "location", target = "location"),
             @Mapping(source = "timestamp", target = "timestamp"),
             @Mapping(source = "status", target = "status"),
+            @Mapping(source = "recipient_email", target = "recipient_email")
+
 
     })
     void updateFromPackageInTransit(PackageInTransit source, @MappingTarget PackageEntity target);
@@ -50,6 +55,9 @@ public interface PackageMapper {
             @Mapping(source = "location", target = "location"),
             @Mapping(source = "timestamp", target = "timestamp"),
             @Mapping(source = "status", target = "status"),
+            @Mapping(source = "recipientEmail", target = "recipient_email")
+
     })
+
     void updateFromPackageDelivered(PackageDelivered source, @MappingTarget PackageEntity target);
 }

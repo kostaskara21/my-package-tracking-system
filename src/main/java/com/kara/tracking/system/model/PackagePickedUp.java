@@ -23,6 +23,8 @@ public class PackagePickedUp {
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private EventTrackingType status;
+    private String recipient_email;
+
 
 
 }

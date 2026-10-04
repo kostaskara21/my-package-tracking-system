@@ -52,6 +52,9 @@ public class PackageEntity {
     @Enumerated(EnumType.STRING)
     private EventTrackingType status;
 
+    @Column(name = "recipient_email")
+    private String recipient_email;
+
 
 
 }
