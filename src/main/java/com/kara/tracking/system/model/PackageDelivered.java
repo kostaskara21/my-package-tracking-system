@@ -25,4 +25,7 @@ public class PackageDelivered {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private EventTrackingType status;
+    @Column(name = "recipient_email")
+    private String recipientEmail;
+
 }

@@ -24,6 +24,7 @@ public class EventProcessor {
 
         log.info("Consumed Tracking event {}",event,"` Checking Authentication");
 
+        //TODO UNCOMMENT FOR AUTH SERVICE
         //String uid= event.getAuthId();
         //authUserService.authenticateUser(uid).block();
 

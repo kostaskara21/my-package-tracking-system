@@ -25,4 +25,6 @@ public class PackageInTransit {
     @Enumerated(EnumType.STRING)
 
     private EventTrackingType status;
+    private String recipient_email;
+
 }

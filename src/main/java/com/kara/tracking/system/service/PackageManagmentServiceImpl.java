@@ -7,6 +7,7 @@ import com.kara.tracking.system.model.enums.EventTrackingType;
 import com.kara.tracking.system.repositories.PackageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Consumer;
@@ -29,15 +30,20 @@ public class PackageManagmentServiceImpl  implements PackageManagementService{
                         if(!eventTrackingType.equals(EventTrackingType.PACKAGE_CREATED)){
                             throw new PackageNotFoundException("Not such a package found");
                         }
-                        PackageEntity newPkg = new PackageEntity();
-                        newPkg.setPackageId(packageId);
-                        newPkg.setOrderId(orderId);
-                        return newPkg;
+                        return createPackage(packageId, orderId);
                     });
 
             packageCreatedConsumer.accept(newPackage);
 
             packageRepository.save(newPackage);
 
+    }
+
+    @NonNull
+    private static PackageEntity createPackage(String packageId, String orderId) {
+        PackageEntity newPkg = new PackageEntity();
+        newPkg.setPackageId(packageId);
+        newPkg.setOrderId(orderId);
+        return newPkg;
     }
 }
